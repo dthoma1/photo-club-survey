@@ -142,7 +142,7 @@
     container.innerHTML = "";
     if (cameras.length === 0) {
       container.innerHTML =
-        '<div class="empty">No responses yet — be the first to recommend a camera!</div>';
+        '<div class="empty">No responses yet — be the first to recommend a camera.</div>';
       return;
     }
     const top = cameras.slice(0, 10);
@@ -152,11 +152,10 @@
       const row = document.createElement("a");
       row.className = "row" + (rank <= 3 ? ` r${rank}` : "");
       row.href = `camera.html?camera=${encodeURIComponent(c.key)}`;
-      row.style.color = "inherit";
-      row.style.textDecoration = "none";
+      const rankStr = String(rank).padStart(2, "0");
       row.innerHTML = `
-        <div class="rank">#${rank}</div>
-        <div>
+        <div class="rank">№ ${rankStr}</div>
+        <div class="name-block">
           <div class="name"></div>
           <div class="meta">${c.comments.length} comment${c.comments.length === 1 ? "" : "s"}</div>
         </div>
@@ -169,14 +168,23 @@
 
   function renderCommentsPage(summaryEl, listEl, cameras, cameraKey) {
     const match = cameras.find((c) => c.key === cameraKey);
+    const figEl = document.getElementById("fig-label");
     if (!match) {
       summaryEl.innerHTML = `<h2>Camera not found</h2><div class="count">No responses recorded for this camera yet.</div>`;
+      if (figEl) figEl.textContent = "[ Fig. — ]";
       listEl.innerHTML = "";
       return;
     }
+    const rankIdx = cameras.indexOf(match);
+    const rankStr = String(rankIdx + 1).padStart(2, "0");
+    if (figEl) figEl.textContent = `[ Fig. ${rankStr} — Rank №${rankStr} ]`;
+
     summaryEl.innerHTML = `
       <h2></h2>
-      <div class="count">${match.votes} vote${match.votes === 1 ? "" : "s"} · ${match.comments.length} comment${match.comments.length === 1 ? "" : "s"}</div>
+      <div class="count">
+        <span class="pill">${match.votes} vote${match.votes === 1 ? "" : "s"}</span>
+        ${match.comments.length} comment${match.comments.length === 1 ? "" : "s"}
+      </div>
     `;
     summaryEl.querySelector("h2").textContent = match.name;
 

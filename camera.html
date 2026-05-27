@@ -4,24 +4,39 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Comments — Photo Club Leaderboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap">
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
   <div class="container">
     <a class="back" href="index.html">← Back to leaderboard</a>
 
-    <div id="summary" class="summary">
-      <h2>Loading…</h2>
+    <div class="section-head">
+      <div class="slash-label text-smallcaps"><span class="slash">/</span>Camera Profile</div>
+      <div class="fig text-smallcaps" id="fig-label">[ Fig. — ]</div>
     </div>
 
-    <div class="toolbar" style="justify-content:flex-start;margin:0 0 18px;">
-      <a class="btn btn-primary" data-survey-link href="#">Add your recommendation</a>
+    <section id="summary" class="summary">
+      <h2>Loading…</h2>
+    </section>
+
+    <div class="toolbar">
+      <a class="btn btn-primary" data-survey-link href="#">Add your recommendation →</a>
+      <a class="btn" href="index.html">Back to leaderboard</a>
+    </div>
+
+    <div class="section-head" style="margin-top:48px;">
+      <div class="slash-label text-smallcaps"><span class="slash">/</span>Comments</div>
+      <div class="fig text-smallcaps" id="fig-comments">[ Fig. 02 ]</div>
     </div>
 
     <section id="comments" class="comments"></section>
 
     <footer class="foot">
-      Submissions are collected via Google Forms.
+      <span>Photo Club · 2026</span>
+      <span>Submissions via Google Forms</span>
     </footer>
   </div>
 
