@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Comments — Photo Club Leaderboard</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <a class="back" href="index.html">← Back to leaderboard</a>
+
+    <div id="summary" class="summary">
+      <h2>Loading…</h2>
+    </div>
+
+    <div class="toolbar" style="justify-content:flex-start;margin:0 0 18px;">
+      <a class="btn btn-primary" data-survey-link href="#">Add your recommendation</a>
+    </div>
+
+    <section id="comments" class="comments"></section>
+
+    <footer class="foot">
+      Submissions are collected via Google Forms.
+    </footer>
+  </div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+  <script>Survey.initCameraPage();</script>
+</body>
+</html>

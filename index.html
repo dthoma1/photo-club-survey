@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Best Beginner Camera — Photo Club Leaderboard</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>📸 Best Beginner Camera for Smartphone Photographers</h1>
+      <p>Top picks from our photography club. Tap a camera to see what people said about it.</p>
+    </header>
+
+    <div class="toolbar">
+      <a class="btn btn-primary" data-survey-link href="#">Add your recommendation</a>
+    </div>
+
+    <main>
+      <div id="leaderboard" class="leaderboard">
+        <div class="loading">Loading leaderboard…</div>
+      </div>
+    </main>
+
+    <footer class="foot">
+      Submissions are collected via Google Forms. Results refresh on page load.
+    </footer>
+  </div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+  <script>Survey.initLeaderboard();</script>
+</body>
+</html>
